@@ -56,4 +56,42 @@ body {
   margin: 0;
 }
 
+.about-shape {
+    position: relative;
+    z-index: 3;
+}
+
+.about-area-primery {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+.about-area-primery .about-shape:before{
+    background: url(../public/images/shape/about-bg.svg) no-repeat;
+}
+
+.about-area-primery:after {
+    position: absolute;
+    content: "";
+    height: 400px;
+    width: 400px;
+    right: 0;
+    top: 0;
+    background: url(../public/images/shape/about-bg.svg);
+    opacity: .1;
+}
+
+.about-shape:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 130%;
+    background: url(../public/images/shape/about-bg-shape.png);
+    z-index: -1;
+    left: -15%;
+    background-repeat: no-repeat;
+    top: 0%;
+}
+
 
