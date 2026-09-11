@@ -205,7 +205,7 @@ function Home() {
             {/* Hero */}
             <section
                 id="home"
-                className="px-6 py-[250px] bg-[url('images/banner/banner.jpg')] bg-cover bg-center bg-no-repeat min-h-[830px]"
+                className="px-6 py-[250px] bg-[url('../images/banner/banner.jpg')] bg-cover bg-center bg-no-repeat min-h-[830px]"
             >
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div>
