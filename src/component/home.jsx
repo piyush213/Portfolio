@@ -51,6 +51,27 @@ function Home() {
             tech: ["React", "Web3"],
             live: "https://purpleswap.io/",
         },
+        {
+            title: "ArtFungible",
+            image: "/images/project/artfungible.png",
+            description: "NFT Marketplace Platform",
+            tech: ["React", "Web3", "Bootstrap"],
+            live: "https://artfungible.io/",
+        },
+        {
+            title: "Property Nu",
+            image: "/images/project/propertynu.png",
+            description: "Real Estate Platform",
+            tech: ["React", "Tailwind"],
+            live: "https://www.propertynu.com/",
+        },
+        {
+            title: "Purple Swap",
+            image: "/images/project/purpleswap.png",
+            description: "Crypto Exchange Platform",
+            tech: ["React", "Web3"],
+            live: "https://purpleswap.io/",
+        },
     ];
     const experiences = [
         {
@@ -140,17 +161,44 @@ function Home() {
         <div className="min-h-screen bg-black text-white">
             {/* Header */}
             <header className="fixed top-0 z-50 w-full backdrop-blur border-b border-slate-800">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between relative">
+
+                    {/* Logo */}
                     <div className="brand">
-                        <img src="/images/logo/p.png" width={`60px`} />
+                        <img
+                            src="/images/logo/p.png"
+                            width="60px"
+                            alt="Logo"
+                        />
                     </div>
 
-                    <nav className="hidden md:flex gap-8 text-sm lg:text-base">
-                        <a href="#home" className="hover:text-cyan-400 duration-300">Home</a>
-                        <a href="#about" className="hover:text-cyan-400 duration-300">About</a>
-                        <a href="#skills" className="hover:text-cyan-400 duration-300">Skills</a>
-                        <a href="#contact" className="hover:text-cyan-400 duration-300">Contact</a>
+                    {/* Center Menu */}
+                    <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-8 text-sm lg:text-base">
+                        <a href="#home" className="hover:text-cyan-400 duration-300">
+                            Home
+                        </a>
+                        <a href="#about" className="hover:text-cyan-400 duration-300">
+                            About
+                        </a>
+                        <a href="#skills" className="hover:text-cyan-400 duration-300">
+                            Skills
+                        </a>
+                        <a href="#contact" className="hover:text-cyan-400 duration-300">
+                            Contact
+                        </a>
                     </nav>
+
+                    {/* Right Contact Button */}
+                    <a
+                        href="#contact"
+                        className="hidden md:inline-flex items-center px-5 py-2 rounded-full 
+                       border border-cyan-400 text-cyan-400 
+                       hover:bg-cyan-400 hover:text-slate-900 
+                       transition-all duration-300"
+                    >
+                        Contact Me
+                    </a>
+
                 </div>
             </header>
 
@@ -186,7 +234,7 @@ function Home() {
 
                     <div className="flex justify-center">
                         <img
-                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43f?w=500"
+                            src="images/profile/p.png"
                             alt="Profile"
                             className="w-80 h-80 rounded-full object-cover border-4 border-cyan-500 shadow-2xl"
                         />
@@ -208,7 +256,7 @@ function Home() {
                                 <div className="about-img-section text-center h-[480px] w-[420px] bg-cover bg-center bg-no-repeat"
                                     style={{
                                         backgroundImage:
-                                            'url("https://wp.quomodosoft.com/glint/wp-content/uploads/2019/12/about1-1.png")',
+                                            'url("images/product_working.png")',
                                     }}>
 
                                 </div>
@@ -267,28 +315,28 @@ function Home() {
             </section>
             <section id="counter" className="py-20">
                 <div className="max-w-6xl mx-auto px-6">
-                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {counters.map((counter, index) => (
-                        <div
-                            key={index}
-                            className="bg-[#11192a] rounded-xl p-8 text-center"
-                            style={{
-                                borderTop: `3px solid ${counter.color}`,
-                                boxShadow: `0 0 20px ${counter.color}20`,
-                            }}
-                        >
-                            <h3
-                                className="text-3xl font-bold"
-                                style={{ color: counter.color }}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {counters.map((counter, index) => (
+                            <div
+                                key={index}
+                                className="bg-[#11192a] rounded-xl p-8 text-center"
+                                style={{
+                                    borderTop: `3px solid ${counter.color}`,
+                                    boxShadow: `0 0 20px ${counter.color}20`,
+                                }}
                             >
-                                {counter.number}
-                            </h3>
+                                <h3
+                                    className="text-3xl font-bold"
+                                    style={{ color: counter.color }}
+                                >
+                                    {counter.number}
+                                </h3>
 
-                            <p className="mt-2 text-gray-300">
-                                {counter.label}
-                            </p>
-                        </div>
-                    ))}
+                                <p className="mt-2 text-gray-300">
+                                    {counter.label}
+                                </p>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
