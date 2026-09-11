@@ -19,7 +19,7 @@ function Home() {
 
     const skills = [
         { name: "React.js", icon: <FaReact fill="#09e5f4" size={40} />, color: "#09e5f4" },
-        { name: "Next.js", icon: <SiNextdotjs fill="black" size={40} />, color: "#2c3951" },
+        { name: "Next.js", icon: <SiNextdotjs fill="black" size={40} />, color: "#2c3951", bgColor:"#fff" },
         { name: "JavaScript", icon: <FaJs fill="#f4d02a" size={40} />, color: "#f4d02a" },
         { name: "TypeScript", icon: <SiTypescript fill="#0773ce" size={40} />, color: "#0773ce" },
         { name: "HTML5", icon: <FaHtml5 fill="#eb5523" size={40} />, color: "#eb5523" },
@@ -304,7 +304,13 @@ function Home() {
                             <div
                                 className="flex justify-center mb-4"
                             >
+                                <div style={{
+                                    backgroundColor:`${skill.bgColor}`,
+                                    padding:`0.8px`,
+                                    borderRadius:"20px"
+                            }}>
                                 {skill.icon}
+                                </div>
                             </div>
 
                             <h3 className="text-white font-medium">{skill.name}</h3>
