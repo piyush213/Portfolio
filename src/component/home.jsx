@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { ArrowUpRight, Play } from "lucide-react";
 import {
     BriefcaseBusiness,
@@ -24,6 +25,7 @@ import {
 
 
 function Home() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const skills = [
         {
@@ -216,60 +218,285 @@ function Home() {
     return (
         <div className="min-h-screen bg-black text-white">
             {/* Header */}
-            <header className="fixed top-0 z-50 w-full backdrop-blur border-b border-slate-800">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between relative">
+            <header className="fixed top-0 z-50 w-full bg-black/60 backdrop-blur-xl border-b border-white/10">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between relative">
 
                     {/* Logo */}
-                    <div className="brand">
+                    <div className="brand z-[60]">
                         <img
                             src="/images/logo/p.png"
-                            width="60px"
+                            width="60"
                             alt="Logo"
+                            className="w-[50px] sm:w-[60px]"
                         />
                     </div>
 
-                    {/* Center Menu */}
+                    {/* Desktop Menu */}
                     <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-8 text-sm lg:text-base">
                         <a href="#home" className="hover:text-cyan-400 duration-300">
                             Home
                         </a>
+
                         <a href="#about" className="hover:text-cyan-400 duration-300">
                             About
                         </a>
+
                         <a href="#skills" className="hover:text-cyan-400 duration-300">
                             Skills
                         </a>
+
                         <a href="#contact" className="hover:text-cyan-400 duration-300">
                             Contact
                         </a>
                     </nav>
 
-                    {/* Right Contact Button */}
+                    {/* Desktop Contact */}
                     <a
                         href="#contact"
-                        className="hidden md:inline-flex items-center px-5 py-2 rounded-full 
-                       border border-cyan-400 text-cyan-400 
-                       hover:bg-cyan-400 hover:text-slate-900 
-                       transition-all duration-300"
+                        className="hidden md:inline-flex items-center px-5 py-2 rounded-full
+            border border-cyan-400/80 text-cyan-400
+            hover:bg-cyan-400 hover:text-black
+            hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]
+            transition-all duration-300"
                     >
                         Contact Me
                     </a>
 
+                    {/* Mobile Toggle */}
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="md:hidden relative z-[60]
+            w-11 h-11 rounded-xl
+            flex flex-col items-center justify-center
+            gap-[5px]
+            border border-cyan-400/30
+            bg-cyan-400/5
+            hover:bg-cyan-400/10
+            hover:border-cyan-400/60
+            transition-all duration-300"
+                        aria-label="Toggle navigation"
+                    >
+                        <span
+                            className={`block w-5 h-[2px] rounded-full bg-cyan-400
+                transition-all duration-300 ease-in-out
+                ${isMenuOpen
+                                    ? "rotate-45 translate-y-[7px]"
+                                    : ""
+                                }`}
+                        />
+
+                        <span
+                            className={`block w-5 h-[2px] rounded-full bg-cyan-400
+                transition-all duration-200
+                ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
+                        />
+
+                        <span
+                            className={`block w-5 h-[2px] rounded-full bg-cyan-400
+                transition-all duration-300 ease-in-out
+                ${isMenuOpen
+                                    ? "-rotate-45 -translate-y-[7px]"
+                                    : ""
+                                }`}
+                        />
+                    </button>
+
+                    {/* Mobile Menu */}
+                    <div
+                        className={`md:hidden absolute left-0 right-0 top-full
+            overflow-hidden
+            bg-[#05090b]/95
+            backdrop-blur-2xl
+            border-b border-cyan-400/20
+            shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+            transition-all duration-500 ease-in-out
+            ${isMenuOpen
+                                ? "max-h-[380px] opacity-100 visible"
+                                : "max-h-0 opacity-0 invisible"
+                            }`}
+                    >
+                        <nav className="px-5 py-5">
+
+                            {/* Home */}
+                            <a
+                                href="#home"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="group flex items-center gap-3
+                    px-4 py-3.5 mb-1
+                    rounded-xl
+                    text-sm font-medium text-white/80
+                    hover:text-cyan-400
+                    hover:bg-cyan-400/10
+                    transition-all duration-300"
+                            >
+                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400
+                    opacity-0 group-hover:opacity-100 transition-all" />
+                                Home
+                            </a>
+
+                            {/* About */}
+                            <a
+                                href="#about"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="group flex items-center gap-3
+                    px-4 py-3.5 mb-1
+                    rounded-xl
+                    text-sm font-medium text-white/80
+                    hover:text-cyan-400
+                    hover:bg-cyan-400/10
+                    transition-all duration-300"
+                            >
+                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400
+                    opacity-0 group-hover:opacity-100 transition-all" />
+                                About
+                            </a>
+
+                            {/* Skills */}
+                            <a
+                                href="#skills"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="group flex items-center gap-3
+                    px-4 py-3.5 mb-1
+                    rounded-xl
+                    text-sm font-medium text-white/80
+                    hover:text-cyan-400
+                    hover:bg-cyan-400/10
+                    transition-all duration-300"
+                            >
+                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400
+                    opacity-0 group-hover:opacity-100 transition-all" />
+                                Skills
+                            </a>
+
+                            {/* Contact */}
+                            <a
+                                href="#contact"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="group flex items-center gap-3
+                    px-4 py-3.5
+                    rounded-xl
+                    text-sm font-medium text-white/80
+                    hover:text-cyan-400
+                    hover:bg-cyan-400/10
+                    transition-all duration-300"
+                            >
+                                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400
+                    opacity-0 group-hover:opacity-100 transition-all" />
+                                Contact
+                            </a>
+
+                            {/* Mobile Contact Button */}
+                            <a
+                                href="#contact"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="mt-4 flex items-center justify-center
+                    w-full px-5 py-3
+                    rounded-xl
+                    border border-cyan-400
+                    text-cyan-400
+                    text-sm font-semibold
+                    hover:bg-cyan-400
+                    hover:text-black
+                    hover:shadow-[0_0_25px_rgba(34,211,238,0.3)]
+                    transition-all duration-300"
+                            >
+                                Contact Me
+                            </a>
+
+                        </nav>
+                    </div>
                 </div>
             </header>
 
             {/* Hero */}
             <section
                 id="home"
-                className="px-6 py-[150px] bg-[url('../images/banner/banner.png')] bg-cover bg-center bg-no-repeat min-h-[500px]"
+                className="relative overflow-hidden py-[150px]
+    bg-center bg-no-repeat min-h-[500px]"
             >
-                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                 <div
+                    className="top-20 left-0 w-[600px] h-[600px] absolute opacity-[0.2]"
+                >
+                    <img src="images/banner/banner2.svg" />
+                    </div>
+                {/* ================= BACKGROUND ANIMATION ================= */}
+
+                {/* Blue Glow - Top Left */}
+                <div
+                    className="pointer-events-none absolute -top-32 -left-32
+        w-[450px] h-[450px]
+        rounded-full
+        bg-cyan-500/10
+        blur-[120px]
+        animate-[floatGlow_8s_ease-in-out_infinite]"
+                />
+
+                {/* Blue Glow - Right */}
+                <div
+                    className="pointer-events-none absolute -right-40 top-1/4
+        w-[400px] h-[400px]
+        rounded-full
+        bg-blue-600/10
+        blur-[120px]
+        animate-[floatGlow2_10s_ease-in-out_infinite]"
+                />
+
+                {/* Bottom Glow */}
+                <div
+                    className="pointer-events-none absolute -bottom-40 left-1/2
+        -translate-x-1/2
+        w-[500px] h-[300px]
+        rounded-full
+        bg-cyan-500/10
+        blur-[130px]
+        animate-pulse"
+                />
+
+                {/* Moving Light */}
+                <div
+                    className="pointer-events-none absolute top-0 left-0
+        w-[180px] h-[2px]
+        bg-gradient-to-r from-transparent via-cyan-400 to-transparent
+        opacity-60
+        animate-[moveLight_7s_linear_infinite]"
+                />
+
+                {/* Small Floating Dots */}
+                <span
+                    className="pointer-events-none absolute top-[20%] left-[10%]
+        w-1.5 h-1.5 rounded-full bg-cyan-400/60
+        shadow-[0_0_15px_#22d3ee]
+        animate-[floatDot_5s_ease-in-out_infinite]"
+                />
+
+                <span
+                    className="pointer-events-none absolute top-[65%] right-[12%]
+        w-1 h-1 rounded-full bg-blue-400/70
+        shadow-[0_0_12px_#3b82f6]
+        animate-[floatDot2_7s_ease-in-out_infinite]"
+                />
+
+                <span
+                    className="pointer-events-none absolute bottom-[15%] left-[45%]
+        w-1.5 h-1.5 rounded-full bg-cyan-400/50
+        shadow-[0_0_15px_#22d3ee]
+        animate-[floatDot3_6s_ease-in-out_infinite]"
+                />
+
+                {/* ================= CONTENT ================= */}
+
+                <div className="relative z-10 max-w-6xl px-6 mx-auto grid lg:grid-cols-2 gap-12 items-center">
+
                     <div>
-                        <p className="text-cyan-400 mb-2">Hello, I'm</p>
+                        <p className="text-cyan-400 mb-2">
+                            Hello, I'm
+                        </p>
 
                         <h2 className="text-5xl font-bold leading-tight">
                             Piyush
-                            <span className="block text-cyan-400">Frontend Developer</span>
+                            <span className="block text-cyan-400">
+                                Frontend Developer
+                            </span>
                         </h2>
 
                         <p className="text-slate-300 mt-6 leading-8">
@@ -294,58 +521,55 @@ function Home() {
                             {/* Outer Orbit */}
                             <div
                                 className="absolute w-[380px] h-[380px]
-            rounded-full border border-cyan-400/20
-            animate-[spin_15s_linear_infinite]"
+                    rounded-full border border-cyan-400/20
+                    animate-[spin_15s_linear_infinite]"
                             >
                                 <span
                                     className="absolute -top-2 left-1/2
-                w-4 h-4 rounded-full bg-cyan-400
-                shadow-[0_0_20px_#22d3ee]"
+                        w-4 h-4 rounded-full bg-cyan-400
+                        shadow-[0_0_20px_#22d3ee]"
                                 />
                             </div>
 
                             {/* Second Orbit */}
                             <div
                                 className="absolute w-[380px] h-[380px]
-            rounded-full border border-purple-500/20
-            rotate-45"
+                    rounded-full border border-purple-500/20
+                    rotate-45"
                             />
 
                             {/* Glow */}
                             <div
                                 className="absolute w-70 h-70
-            rounded-full
-            bg-cyan-500/20
-            blur-[80px]"
+                    rounded-full
+                    bg-cyan-500/20
+                    blur-[80px]"
                             />
 
-                            {/* Circular Image + Gradient Border */}
+                            {/* Circular Image */}
                             <div
                                 className="relative w-70 h-70
-            rounded-full
-            p-[4px]
-            bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600
-            shadow-[0_0_35px_rgba(34,211,238,0.35)]
-            transition-all duration-500
-            "
+                    rounded-full
+                    p-[4px]
+                    bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600
+                    shadow-[0_0_35px_rgba(34,211,238,0.35)]
+                    transition-all duration-500"
                             >
-                                {/* Inner Circle */}
                                 <div
                                     className="w-full h-full
-                rounded-full
-                overflow-hidden
-                bg-zinc-950
-                border-4 border-zinc-950"
+                        rounded-full
+                        overflow-hidden
+                        bg-zinc-950
+                        border-4 border-zinc-950"
                                 >
                                     <img
                                         src="images/profile/p.png"
                                         alt="Piyush - Frontend Developer"
                                         className="w-full h-full
-                    rounded-full
-                    object-cover
-                    scale-105
-                    transition-transform duration-700
-                    "
+                            rounded-full
+                            object-cover
+                            scale-105
+                            transition-transform duration-700"
                                     />
                                 </div>
                             </div>
@@ -353,10 +577,10 @@ function Home() {
                             {/* Experience Badge */}
                             <div
                                 className="absolute -right-2 top-16
-            px-4 py-2 rounded-xl
-            bg-zinc-900/90 backdrop-blur-md
-            border border-cyan-400/30
-            shadow-lg shadow-cyan-500/10"
+                    px-4 py-2 rounded-xl
+                    bg-zinc-900/90 backdrop-blur-md
+                    border border-cyan-400/30
+                    shadow-lg shadow-cyan-500/10"
                             >
                                 <span className="text-cyan-400 font-bold text-lg">
                                     7.8+
@@ -370,16 +594,16 @@ function Home() {
                             {/* Available Badge */}
                             <div
                                 className="absolute -left-4 bottom-16
-            flex items-center gap-2
-            px-4 py-2 rounded-xl
-            bg-zinc-900/90 backdrop-blur-md
-            border border-green-400/20"
+                    flex items-center gap-2
+                    px-4 py-2 rounded-xl
+                    bg-zinc-900/90 backdrop-blur-md
+                    border border-green-400/20"
                             >
                                 <span
                                     className="w-2.5 h-2.5
-                rounded-full
-                bg-green-400
-                animate-pulse"
+                        rounded-full
+                        bg-green-400
+                        animate-pulse"
                                 />
 
                                 <span className="text-xs text-white">
@@ -390,7 +614,6 @@ function Home() {
                         </div>
                     </div>
                 </div>
-
             </section>
 
             {/* About */}
@@ -400,7 +623,7 @@ function Home() {
             >
                 <div className="about-area about-area-primery">
 
-                    <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                         <div className="about-img">
                             <div className="about-shape">
                                 <div className="about-img-section text-center h-[480px] w-[420px] bg-cover bg-center bg-no-repeat"
@@ -415,7 +638,9 @@ function Home() {
 
                         </div>
                         <div>
-                            <p className="text-cyan-400 text-sm font-semibold tracking-[3px] mb-4">
+                            <p className="inline-block mb-4 px-4 py-1.5 rounded-full
+                border border-cyan-400/20 bg-cyan-400/5
+                text-cyan-400 text-sm font-medium tracking-wide">
                                 ABOUT ME
                             </p>
 
@@ -482,108 +707,112 @@ function Home() {
             {/* Skills */}
             <section
                 id="skills"
-                className="relative max-w-6xl mx-auto px-6 py-24 overflow-hidden"
+                className="relative py-24 overflow-hidden"
             >
-                {/* Background Glow */}
-                <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72 h-72 bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="max-w-6xl mx-auto px-6 ">
+                    {/* Background Glow */}
+                    <div className="absolute top-20 left-1/2 -translate-x-1/2 w-72 h-72 bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
 
-                {/* Heading */}
-                <div className="relative text-center mb-14">
-                    <span className="inline-block text-sm font-semibold uppercase text-cyan-400 mb-3">
-                        My Expertise
-                    </span>
-
-                    <h2 className="text-3xl md:text-4xl font-bold text-white">
-                        Technical{" "}
-                        <span className="text-cyan-400">
-                            Skills
+                    {/* Heading */}
+                    <div className="relative text-center mb-14">
+                        <span className="inline-block mb-4 px-4 py-1.5 rounded-full
+                border border-cyan-400/20 bg-cyan-400/5
+                text-cyan-400 text-sm font-medium tracking-wide">
+                            My Expertise
                         </span>
-                    </h2>
 
-                    <p className="max-w-2xl mx-auto mt-5 text-gray-400 leading-relaxed">
-                        Technologies and tools I use to build modern, responsive,
-                        and high-performance web applications.
-                    </p>
-                </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white">
+                            Technical{" "}
+                            <span className="text-cyan-400">
+                                Skills
+                            </span>
+                        </h2>
 
-                {/* Skills Grid */}
-                <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
-                    {skills.map((skill, index) => (
-                        <div
-                            key={index}
-                            className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0f172a] p-6 text-center
+                        <p className="max-w-2xl mx-auto mt-5 text-gray-400 leading-relaxed">
+                            Technologies and tools I use to build modern, responsive,
+                            and high-performance web applications.
+                        </p>
+                    </div>
+
+                    {/* Skills Grid */}
+                    <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+                        {skills.map((skill, index) => (
+                            <div
+                                key={index}
+                                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0f172a] p-6 text-center
                transition-all duration-500
                hover:border-white/20
                hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
-                        >
-                            {/* Spotlight */}
-                            <div
-                                className="pointer-events-none absolute -inset-px opacity-0
+                            >
+                                {/* Spotlight */}
+                                <div
+                                    className="pointer-events-none absolute -inset-px opacity-0
                    group-hover:opacity-100 transition-opacity duration-500"
-                                style={{
-                                    background: `radial-gradient(
+                                    style={{
+                                        background: `radial-gradient(
                 180px circle at 50% 0%,
                 ${skill.color}30,
                 transparent 70%
             )`,
-                                }}
-                            />
+                                    }}
+                                />
 
-                            {/* Top Shine */}
-                            <div
-                                className="absolute top-0 left-[-100%] w-full h-[1px]
+                                {/* Top Shine */}
+                                <div
+                                    className="absolute top-0 left-[-100%] w-full h-[1px]
                    group-hover:left-[100%]
                    transition-all duration-700"
-                                style={{
-                                    background: `linear-gradient(
+                                    style={{
+                                        background: `linear-gradient(
                 90deg,
                 transparent,
                 ${skill.color},
                 transparent
             )`,
-                                }}
-                            />
+                                    }}
+                                />
 
-                            {/* Content */}
-                            <div className="relative z-10">
+                                {/* Content */}
+                                <div className="relative z-10">
 
-                                {/* Icon */}
-                                <div
-                                    className="mx-auto mb-5 w-16 h-16 flex items-center justify-center
+                                    {/* Icon */}
+                                    <div
+                                        className="mx-auto mb-5 w-16 h-16 flex items-center justify-center
                        rounded-2xl border
                        transition-all duration-500
                        group-hover:-translate-y-2
                        group-hover:scale-110"
-                                    style={{
-                                        color: skill.color,
-                                        borderColor: `${skill.color}30`,
-                                        backgroundColor: `${skill.color}0d`,
-                                    }}
-                                >
-                                    {skill.icon}
-                                </div>
+                                        style={{
+                                            color: skill.color,
+                                            borderColor: `${skill.color}30`,
+                                            backgroundColor: `${skill.color}0d`,
+                                        }}
+                                    >
+                                        {skill.icon}
+                                    </div>
 
-                                {/* Name */}
-                                <h3
-                                    className="text-white font-semibold transition-colors duration-300"
-                                >
-                                    {skill.name}
-                                </h3>
+                                    {/* Name */}
+                                    <h3
+                                        className="text-white font-semibold transition-colors duration-300"
+                                    >
+                                        {skill.name}
+                                    </h3>
 
-                                {/* Hover Indicator */}
-                                <div className="mt-4 flex justify-center">
-                                    <span
-                                        className="w-0 h-[2px] rounded-full
+                                    {/* Hover Indicator */}
+                                    <div className="mt-4 flex justify-center">
+                                        <span
+                                            className="w-0 h-[2px] rounded-full
                            group-hover:w-10
                            transition-all duration-500"
-                                        style={{
-                                            backgroundColor: skill.color,
-                                        }}
-                                    />
+                                            style={{
+                                                backgroundColor: skill.color,
+                                            }}
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
             <section id="counter" className="py-20 relative overflow-hidden">
@@ -591,7 +820,9 @@ function Home() {
 
                     {/* Section Heading */}
                     <div className="text-center mb-12">
-                        <span className="text-sm font-bold uppercase text-cyan-400">
+                        <span className="inline-block px-4 py-1.5 rounded-full
+                border border-cyan-400/20 bg-cyan-400/5
+                text-cyan-400 text-sm font-medium tracking-wide">
                             My Achievements
                         </span>
 

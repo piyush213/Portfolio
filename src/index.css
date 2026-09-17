@@ -57,56 +57,209 @@ body {
 }
 
 .about-shape {
-    position: relative;
-    z-index: 3;
+  position: relative;
+  z-index: 3;
 }
 
 .about-area-primery {
-    position: relative;
-    z-index: 2;
-    background: transparent;
+  position: relative;
+  z-index: 2;
+  background: transparent;
 }
 
-.about-area-primery .about-shape:before{
-    background: url(../public/images/shape/about-shape2.svg) no-repeat;
+.about-area-primery .about-shape:before {
+  background: url(../public/images/shape/about-shape2.svg) no-repeat;
 }
 
 .about-shape:before {
-    position: absolute;
-    content: "";
-    height: 300px;
-    width: 300px;
-    background: url(../img/about/about-shape.svg) no-repeat;
-    background-repeat: no-repeat;
-    bottom: -20%;
-    left: -15%;
-    z-index: -1;
+  position: absolute;
+  content: "";
+  height: 300px;
+  width: 300px;
+  background: url(../img/about/about-shape.svg) no-repeat;
+  background-repeat: no-repeat;
+  bottom: -20%;
+  left: -15%;
+  z-index: -1;
 }
 
 .about-area-primery:after {
-    position: absolute;
-    content: "";
-    height: 400px;
-    width: 400px;
-    right: 0;
-    top: 0;
-    background: url(../public/images/shape/about-bg.svg);
-    opacity: .1;
+  position: absolute;
+  content: "";
+  height: 400px;
+  width: 400px;
+  right: 0;
+  top: 0;
+  background: url(../public/images/shape/about-bg.svg);
+  opacity: .1;
 }
 
 .about-shape:after {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 130%;
-    background: url(../public/images/shape/about-bg-shape.png);
-    z-index: -1;
-    left: -15%;
-    background-repeat: no-repeat;
-    top: 0%;
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 130%;
+  background: url(../public/images/shape/about-bg-shape.png);
+  z-index: -1;
+  left: -15%;
+  background-repeat: no-repeat;
+  top: 0%;
 }
 
 .about-img-section {
-    padding: 240px 0;
+  padding: 240px 0;
 }
 
+/* ----------------------- */
+
+@keyframes floatGlow {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(80px, 50px) scale(1.15);
+    }
+}
+
+@keyframes floatGlow2 {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-70px, 60px) scale(1.2);
+    }
+}
+
+@keyframes moveLight {
+    0% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+}
+
+@keyframes floatDot {
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(40px, -30px);
+        opacity: 1;
+    }
+}
+
+@keyframes floatDot2 {
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-30px, 40px);
+        opacity: 1;
+    }
+}
+
+@keyframes floatDot3 {
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(25px, -40px);
+        opacity: 1;
+    }
+}
+
+.wave-btn {
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid #fff;
+  padding: 5px 30px;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Noto Sans";
+  line-height: 52px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.wave-btn:before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 130px;
+  background-color: #0097e6;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  animation: wave 5s infinite linear;
+  transition: all 1s;
+}
+
+
+.wave-btn:hover:before {
+  top: 15px;
+}
+
+@keyframes wave {
+  0% {
+               transform: translate(-50%) rotate(-180deg);
+    
+  }
+  
+  
+  100% {
+            transform: translate(-50%) rotate(360deg);
+  }
+}
+/* --------------------- */
+
+
+@media screen and (max-width: 768px) {
+  .about-shape:after {
+    width: 100%;
+    top: 0%;
+  }
+
+  .about-area-primery:after {
+    top: 70%;
+  }
+
+  .about-img {
+    margin-bottom: 10%;
+  }
+  .about-img {
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+}
+}
