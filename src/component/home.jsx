@@ -245,14 +245,15 @@ function Home() {
                             Skills
                         </a>
 
-                        <a href="#contact" className="hover:text-cyan-400 duration-300">
-                            Contact
+                        <a href="#project" className="hover:text-cyan-400 duration-300">
+                            Project
                         </a>
                     </nav>
 
                     {/* Desktop Contact */}
                     <a
-                        href="#contact"
+                        href="https://wa.me/919399590235"
+                        target="_blank"
                         className="hidden md:inline-flex items-center px-5 py-2 rounded-full
             border border-cyan-400/80 text-cyan-400
             hover:bg-cyan-400 hover:text-black
@@ -370,7 +371,7 @@ function Home() {
 
                             {/* Contact */}
                             <a
-                                href="#contact"
+                                href="#project"
                                 onClick={() => setIsMenuOpen(false)}
                                 className="group flex items-center gap-3
                     px-4 py-3.5
@@ -382,7 +383,7 @@ function Home() {
                             >
                                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400
                     opacity-0 group-hover:opacity-100 transition-all" />
-                                Contact
+                                Project
                             </a>
 
                             {/* Mobile Contact Button */}
@@ -414,11 +415,17 @@ function Home() {
                 className="relative overflow-hidden py-[150px]
     bg-center bg-no-repeat min-h-[500px]"
             >
-                 <div
-                    className="top-20 left-0 w-[600px] h-[600px] absolute opacity-[0.2]"
+                <div
+                    className="top-20 left-0 w-[450px] h-[450px] absolute opacity-[0.2]"
                 >
-                    <img src="images/banner/banner2.svg" />
-                    </div>
+                    <img src="images/banner/left_shape.svg" />
+                </div>
+
+                <div
+                    className="top-20 right-0 w-[114px] h-[80px] absolute opacity-[0.2]"
+                >
+                    <img src="images/banner/right_shape.svg" />
+                </div>
                 {/* ================= BACKGROUND ANIMATION ================= */}
 
                 {/* Blue Glow - Top Left */}
@@ -505,114 +512,184 @@ function Home() {
                         </p>
 
                         <div className="flex gap-4 mt-8">
-                            <button className="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg font-semibold">
+                            <a
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=piyush1011dungrani@gmail.com&su=Hiring%20Inquiry%20-%20Frontend%20Developer"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg font-semibold inline-block"
+                            >
                                 Hire Me
-                            </button>
+                            </a>
 
-                            <button className="border border-cyan-500 px-6 py-3 rounded-lg hover:bg-cyan-500">
+
+
+                            <a
+                                href="/resume/Piyush-Dungrani-CV.pdf"
+                                download
+                                className="border border-cyan-500 px-6 py-3 rounded-lg hover:bg-cyan-500"
+                            >
                                 Download CV
-                            </button>
+                            </a>
                         </div>
                     </div>
 
-                    <div className="flex justify-center items-center py-10">
-                        <div className="relative w-[380px] h-[380px] flex items-center justify-center">
+                    <div className="flex justify-center items-center py-6 sm:py-10 px-4">
+                        <div
+                            className="
+            relative 
+            w-[280px] h-[280px]
+            sm:w-[340px] sm:h-[340px]
+            md:w-[380px] md:h-[380px]
+            flex items-center justify-center
+        "
+                        >
 
                             {/* Outer Orbit */}
                             <div
-                                className="absolute w-[380px] h-[380px]
-                    rounded-full border border-cyan-400/20
-                    animate-[spin_15s_linear_infinite]"
+                                className="
+                absolute 
+                w-[280px] h-[280px]
+                sm:w-[340px] sm:h-[340px]
+                md:w-[380px] md:h-[380px]
+                rounded-full 
+                border border-cyan-400/20
+                animate-[spin_15s_linear_infinite]
+            "
                             >
                                 <span
-                                    className="absolute -top-2 left-1/2
-                        w-4 h-4 rounded-full bg-cyan-400
-                        shadow-[0_0_20px_#22d3ee]"
+                                    className="
+                    absolute -top-1.5 sm:-top-2 left-1/2
+                    w-3 h-3 sm:w-4 sm:h-4
+                    rounded-full bg-cyan-400
+                    shadow-[0_0_20px_#22d3ee]
+                "
                                 />
                             </div>
 
                             {/* Second Orbit */}
                             <div
-                                className="absolute w-[380px] h-[380px]
-                    rounded-full border border-purple-500/20
-                    rotate-45"
+                                className="
+                absolute
+                w-[280px] h-[280px]
+                sm:w-[340px] sm:h-[340px]
+                md:w-[380px] md:h-[380px]
+                rounded-full 
+                border border-purple-500/20
+                rotate-45
+            "
                             />
 
                             {/* Glow */}
                             <div
-                                className="absolute w-70 h-70
-                    rounded-full
-                    bg-cyan-500/20
-                    blur-[80px]"
+                                className="
+                absolute
+                w-[200px] h-[200px]
+                sm:w-[250px] sm:h-[250px]
+                md:w-[280px] md:h-[280px]
+                rounded-full
+                bg-cyan-500/20
+                blur-[60px] sm:blur-[70px] md:blur-[80px]
+            "
                             />
 
                             {/* Circular Image */}
                             <div
-                                className="relative w-70 h-70
-                    rounded-full
-                    p-[4px]
-                    bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600
-                    shadow-[0_0_35px_rgba(34,211,238,0.35)]
-                    transition-all duration-500"
+                                className="
+                relative
+                w-[200px] h-[200px]
+                sm:w-[250px] sm:h-[250px]
+                md:w-[280px] md:h-[280px]
+                rounded-full
+                p-[3px] sm:p-[4px]
+                bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600
+                shadow-[0_0_35px_rgba(34,211,238,0.35)]
+                transition-all duration-500
+            "
                             >
                                 <div
-                                    className="w-full h-full
-                        rounded-full
-                        overflow-hidden
-                        bg-zinc-950
-                        border-4 border-zinc-950"
+                                    className="
+                    w-full h-full
+                    rounded-full
+                    overflow-hidden
+                    bg-zinc-950
+                    border-2 sm:border-4 border-zinc-950
+                "
                                 >
                                     <img
                                         src="images/profile/p.png"
                                         alt="Piyush - Frontend Developer"
-                                        className="w-full h-full
-                            rounded-full
-                            object-cover
-                            scale-105
-                            transition-transform duration-700"
+                                        className="
+                        w-full h-full
+                        rounded-full
+                        object-cover
+                        scale-105
+                        transition-transform duration-700
+                    "
                                     />
                                 </div>
                             </div>
 
                             {/* Experience Badge */}
                             <div
-                                className="absolute -right-2 top-16
-                    px-4 py-2 rounded-xl
-                    bg-zinc-900/90 backdrop-blur-md
-                    border border-cyan-400/30
-                    shadow-lg shadow-cyan-500/10"
+                                className="
+                absolute
+                -right-1 sm:-right-2
+                top-8 sm:top-12 md:top-16
+                px-2.5 py-1.5
+                sm:px-4 sm:py-2
+                rounded-lg sm:rounded-xl
+                bg-zinc-900/90 backdrop-blur-md
+                border border-cyan-400/30
+                shadow-lg shadow-cyan-500/10
+            "
                             >
-                                <span className="text-cyan-400 font-bold text-lg">
+                                <span className="text-cyan-400 font-bold text-sm sm:text-lg">
                                     7.8+
                                 </span>
 
-                                <span className="block text-xs text-zinc-400">
+                                <span className="block text-[10px] sm:text-xs text-zinc-400">
                                     Years Exp.
                                 </span>
                             </div>
 
                             {/* Available Badge */}
                             <div
-                                className="absolute -left-4 bottom-16
-                    flex items-center gap-2
-                    px-4 py-2 rounded-xl
-                    bg-zinc-900/90 backdrop-blur-md
-                    border border-green-400/20"
+                                className="
+                absolute
+                -left-1 sm:-left-3 md:-left-4
+                bottom-8 sm:bottom-12 md:bottom-16
+                flex items-center gap-1.5 sm:gap-2
+                px-2.5 py-1.5
+                sm:px-4 sm:py-2
+                rounded-lg sm:rounded-xl
+                bg-zinc-900/90 backdrop-blur-md
+                border border-green-400/20
+            "
                             >
                                 <span
-                                    className="w-2.5 h-2.5
-                        rounded-full
-                        bg-green-400
-                        animate-pulse"
+                                    className="
+                    w-2 h-2 sm:w-2.5 sm:h-2.5
+                    rounded-full
+                    bg-green-400
+                    animate-pulse
+                "
                                 />
 
-                                <span className="text-xs text-white">
+                                <span className="text-[10px] sm:text-xs text-white">
                                     Available
                                 </span>
                             </div>
 
                         </div>
                     </div>
+                </div>
+
+                <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 opacity-[0.2]">
+                    <img
+                        src="images/banner/bottom_shape.svg"
+                        className="mx-auto object-contain"
+                        alt=""
+                    />
                 </div>
             </section>
 
@@ -626,7 +703,7 @@ function Home() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                         <div className="about-img">
                             <div className="about-shape">
-                                <div className="about-img-section text-center h-[480px] w-[420px] bg-cover bg-center bg-no-repeat"
+                                <div className="about-img-section text-center w-[200px] h-[230px] sm:w-[260px] sm:h-[300px] md:w-[320px] md:h-[365px] lg:w-[380px] lg:h-[435px] xl:w-[420px] xl:h-[480px] bg-cover sm:bg-contain bg-center bg-no-repeat"
                                     style={{
                                         backgroundImage:
                                             'url("images/product_working.png")',
@@ -1083,9 +1160,14 @@ function Home() {
                     Available for Frontend Development opportunities.
                 </p>
 
-                <button className="bg-cyan-500 hover:bg-cyan-600 px-8 py-3 rounded-lg font-semibold">
+                <a
+                    href="https://wa.me/919399590235?text=Hi%20Piyush%2C%20I%20would%20like%20to%20discuss%20a%20job%20opportunity."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-cyan-500 hover:bg-cyan-600 px-8 py-3 rounded-lg font-semibold inline-block"
+                >
                     Contact Me
-                </button>
+                </a>
             </section>
 
             {/* Footer */}

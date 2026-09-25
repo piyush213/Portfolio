@@ -244,6 +244,9 @@ body {
 /* --------------------- */
 
 
+
+
+
 @media screen and (max-width: 768px) {
   .about-shape:after {
     width: 100%;
@@ -262,4 +265,20 @@ body {
     display: flex;
     justify-content: center;
 }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .about-shape:before {
+        height: 120px;
+        width: 120px;
+        bottom: -5%;
+        left: 0;
+    }
+
+    .about-area-primery:after {
+        height: 160px;
+        width: 160px;
+        right: -20px;
+    }
 }
