@@ -537,7 +537,7 @@ function Home() {
                         <div
                             className="
             relative 
-            w-[280px] h-[280px]
+            w-[240px] h-[240px]
             sm:w-[340px] sm:h-[340px]
             md:w-[380px] md:h-[380px]
             flex items-center justify-center
@@ -548,7 +548,7 @@ function Home() {
                             <div
                                 className="
                 absolute 
-                w-[280px] h-[280px]
+                w-[240px] h-[240px]
                 sm:w-[340px] sm:h-[340px]
                 md:w-[380px] md:h-[380px]
                 rounded-full 
@@ -570,7 +570,7 @@ function Home() {
                             <div
                                 className="
                 absolute
-                w-[280px] h-[280px]
+                w-[240px] h-[240px]
                 sm:w-[340px] sm:h-[340px]
                 md:w-[380px] md:h-[380px]
                 rounded-full 
@@ -703,7 +703,7 @@ function Home() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                         <div className="about-img">
                             <div className="about-shape">
-                                <div className="about-img-section text-center w-[200px] h-[230px] sm:w-[260px] sm:h-[300px] md:w-[320px] md:h-[365px] lg:w-[380px] lg:h-[435px] xl:w-[420px] xl:h-[480px] bg-cover  bg-center bg-no-repeat"
+                                <div className="about-img-section text-center w-[260px] !h-[230px] sm:w-[260px] sm:h-[300px] md:w-[320px] md:h-[365px] lg:w-[380px] lg:h-[435px] xl:w-[420px] xl:h-[480px] sm:bg-cover bg-contain  bg-center bg-no-repeat"
                                     style={{
                                         backgroundImage:
                                             'url("images/product_working.png")',
