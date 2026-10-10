@@ -499,7 +499,7 @@ function Home() {
                             Hello, I'm
                         </p>
 
-                        <h2 className="text-5xl font-bold leading-tight">
+                        <h2 className="md:text-5xl text-3xl font-bold leading-tight">
                             Piyush
                             <span className="block text-cyan-400">
                                 Frontend Developer
@@ -721,7 +721,7 @@ function Home() {
                                 ABOUT ME
                             </p>
 
-                            <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-7">
+                            <h2 className="text-2xl md:text-4xl font-bold leading-tight mb-7">
                                 Building Modern
                                 <span className="block text-cyan-400">
                                     Digital Experiences
@@ -798,7 +798,7 @@ function Home() {
                             My Expertise
                         </span>
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-white">
+                        <h2 className="text-2xl md:text-4xl font-bold text-white">
                             Technical{" "}
                             <span className="text-cyan-400">
                                 Skills
@@ -903,7 +903,7 @@ function Home() {
                             My Achievements
                         </span>
 
-                        <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">
+                        <h2 className="mt-3 text-2xl md:text-4xl font-bold text-white">
                             Experience &{" "}
                             <span className="text-cyan-400">
                                 Results
@@ -951,7 +951,7 @@ function Home() {
 
                                     {/* Number */}
                                     <h3
-                                        className="relative text-3xl md:text-4xl font-extrabold tracking-tight"
+                                        className="relative text-2xl md:text-4xl font-extrabold tracking-tight"
                                         style={{ color: counter.color }}
                                     >
                                         {counter.number}
@@ -991,7 +991,7 @@ function Home() {
                             MY WORK
                         </span>
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-white">
+                        <h2 className="text-2xl md:text-4xl font-bold text-white">
                             Featured{" "}
                             <span className="text-transparent bg-clip-text 
                     bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -1152,7 +1152,7 @@ function Home() {
                 id="contact"
                 className="max-w-6xl mx-auto px-6 py-20 text-center bg-[url('../images/map-1.png')] bg-cover bg-center bg-no-repeat"
             >
-                <h2 className="text-4xl font-bold mb-5">
+                <h2 className="text-2xl md:text-4xl font-bold mb-5">
                     Let's Work Together
                 </h2>
 
